@@ -1,0 +1,4 @@
+services:
+  weather-willie-discord-bot:
+    image: weather-willie-discord-bot:latest
+    #add restart capability

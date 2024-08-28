@@ -1,0 +1,10 @@
+services:
+  weather-willie-discord-bot:
+    build: .
+    command: node index.js
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./
+          target: /src
+
