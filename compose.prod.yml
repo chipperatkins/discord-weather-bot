@@ -1,4 +1,3 @@
 services:
   weather-willie-discord-bot:
-    image: weather-willie-discord-bot:latest
-    #add restart capability
+    restart: on-failure:6
