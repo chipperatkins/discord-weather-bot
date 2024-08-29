@@ -1,6 +1,6 @@
 const { Events, Collection } = require('discord.js');
 const chatGptUtil = require('../chatGptUtil.js')
-const { clientId } = require('../config.json');
+const { clientId, guildId } = require('../config.json');
 
 const defaultCooldownDuration = 60;
 const cooldownAmount = defaultCooldownDuration * 1_00;
@@ -10,6 +10,8 @@ module.exports = {
 	name: Events.MessageCreate,
 	async execute(message) {
 		if (message.author.bot) return;
+        if (message.guildId != guildId) return;
+
         if (message.mentions.has(clientId)) {
             const now = Date.now();
             if (timestamps.has(message.author.id)) {

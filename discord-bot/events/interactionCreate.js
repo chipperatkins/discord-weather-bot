@@ -1,9 +1,11 @@
 const { Events, Collection } = require('discord.js');
+const { guildId } = require('../config.json');
 
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {
 		if (!interaction.isChatInputCommand()) return;
+		if (interaction.guildId != guildId) return;
 
 		const command = interaction.client.commands.get(interaction.commandName);
 
