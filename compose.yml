@@ -1,10 +1,10 @@
 services:
   weather-willie-discord-bot:
     build: .
-    command: node index.js
+    command: node --watch index.js
     develop:
       watch:
-        - action: sync+restart
+        - action: sync
           path: ./
           target: /src
 

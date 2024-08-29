@@ -1,3 +1,4 @@
 services:
   weather-willie-discord-bot:
+    command: node index.js
     restart: on-failure:6
